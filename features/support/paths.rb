@@ -12,7 +12,13 @@ module NavigationHelpers
   #
   def path_to(page_name)
     case page_name
-
+    
+    when /^the landing page$/
+      root_path
+    when /^the Deals4all Home Page$/
+      pairings_path      
+    when /^the Deals4all Landing Page$/
+      welcome_landing_path  
     when /^the home\s?page$/
       '/'
 
