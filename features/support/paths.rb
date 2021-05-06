@@ -16,18 +16,17 @@ module NavigationHelpers
     when /^the landing page$/
       root_path
     when /^the Deals4all Home Page$/
-      pairings_path      
+      deals_path      
     when /^the Deals4all Landing Page$/
       welcome_landing_path  
-    when /^the home\s?page$/
-      '/'
-
+    
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
     #   when /^(.*)'s profile page$/i
     #     user_profile_path(User.find_by_login($1))
-
+    when /^the RottenPotatoes edit Profile Path for "([^"]*)"$/
+      edit_user_profile_path(1, 2)
     else
       begin
         page_name =~ /^the (.*) page$/
