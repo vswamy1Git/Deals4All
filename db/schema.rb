@@ -26,9 +26,8 @@ ActiveRecord::Schema.define(version: 0) do
   create_table "deals", force: :cascade do |t|
     t.string   "user"
     t.string   "items"
-    t.datetime "date"
+    t.datetime "date",null: false
   end
-
 
 
   create_table "profiles", force: :cascade do |t|
