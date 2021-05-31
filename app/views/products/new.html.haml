@@ -1,0 +1,15 @@
+%h2 Create New Product
+= form_tag products_path do
+  = label :product, :productcode, 'Product Code', :class => 'col-form-label'
+  = text_field :product, :productcode, :class => 'form-control'
+  = label :product, :title, 'Product name', :class => 'col-form-label'
+  = text_field :product, :title, :class => 'form-control'
+  = label :product, :originalprice, 'Original price', :class => 'col-form-label'
+  = text_field :product, :originalprice, :class => 'form-control'
+  = label :product, :offer, 'Offer details', :class => 'col-form-label'
+  = text_field :product, :offer, :class => 'form-control'
+  = label :product, :status, 'Offer status', :class => 'col-form-label'
+  = select :product, :status, ['Available','Not Available'], {}, {:class => 'form-control col-1'}
+  %br
+  = submit_tag 'Save Changes', :class => 'btn btn-primary'
+  = link_to 'Cancel', products_path, :class => 'btn btn-secondary'

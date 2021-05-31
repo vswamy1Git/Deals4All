@@ -1,0 +1,9 @@
+%h2 Create New Product
+= form_tag offers_path do
+  = label :offer, :product, 'Offer Code', :class => 'col-form-label'
+  = text_field :offer, :product, :class => 'form-control'
+  = label :offer, :title, 'Title', :class => 'col-form-label'
+  = text_field :offer, :title, :class => 'form-control'
+  %br
+  = submit_tag 'Save Changes', :class => 'btn btn-primary'
+  = link_to 'Cancel', offers_path, :class => 'btn btn-secondary'
