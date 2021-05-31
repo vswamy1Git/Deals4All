@@ -25,8 +25,13 @@ ActiveRecord::Schema.define(version: 0) do
 
   create_table "deals", force: :cascade do |t|
     t.string   "user"
+<<<<<<< HEAD
     t.string   "product"
     t.datetime "date"
+=======
+    t.string   "items"
+    t.datetime "date",null: false
+>>>>>>> e397c84254e79471a8c5e3f1d0c5c2370082b339
   end
 
   create_table "movies", force: :cascade do |t|
@@ -49,6 +54,7 @@ ActiveRecord::Schema.define(version: 0) do
 
   add_index "offers", ["products_id"], name: "index_offers_on_products_id"
 
+<<<<<<< HEAD
   create_table "products", force: :cascade do |t|
     t.string   "productcode"
     t.string   "title"
@@ -60,6 +66,8 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "updated_at",  null: false
   end
 
+=======
+>>>>>>> e397c84254e79471a8c5e3f1d0c5c2370082b339
   create_table "profiles", force: :cascade do |t|
     t.string   "primary_language"
     t.string   "secondary_language"
