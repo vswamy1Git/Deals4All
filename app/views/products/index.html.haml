@@ -8,7 +8,7 @@
       %th Original price
       %th Offer
       %th Offer status
-      %th More info
+      %th More info/Edit/Delete
   %tbody
     - @products.each do |product|
       %tr
@@ -23,4 +23,5 @@
         %td
           = link_to "More about #{product.title}", product_path(product)
       
-= link_to "Add new product", new_product_path, :class => 'btn btn-primary'
+= link_to "Add new product", new_product_path, :class => 'btn btn-dark'
+<br>
