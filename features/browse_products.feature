@@ -14,8 +14,8 @@ Background: authorization and user in database  # <---- Add this block
   |Tester Suny| stester@binghamton.edu |
   
   Given the following products exist:
-  |productcode | title | offer | create_date |
-  |1234 | iphone | New deals available for iphone 11 and above | 05-24-2021 |
+  |productcode | title | offer |
+  |1234 | iphone | New deals available for iphone 11 and above |
   Given I am logged into Deals4all
 
 @omniauth_test5  

@@ -13,9 +13,9 @@ describe ProductsController, type: :controller do
       session[:user_id] = @user.id      
       @current_user = @user      
     end 
-    let(:product1) {instance_double('Product', productcode: '12345', title: 'iphone', originalprice: '400$', offer: '40% discount', status: 'available', create_date: '2021-05-24')}
-    let(:product2) {instance_double('Product', productcode: '67890', title: 'Heater', originalprice: '400$', offer: '40% discount', status: 'available', create_date: '2021-03-15')}
-    let(:product3) {instance_double('Product', productcode: '12121', title: 'SUn glasses', originalprice: '400$', offer: '40% discount', status: 'available', create_date: '2020-09-23')}
+    let(:product1) {instance_double('Product', productcode: '12345', title: 'iphone', originalprice: '400$', offer: '40% discount', status: 'available')}
+    let(:product2) {instance_double('Product', productcode: '67890', title: 'Heater', originalprice: '400$', offer: '40% discount', status: 'available')}
+    let(:product3) {instance_double('Product', productcode: '12121', title: 'SUn glasses', originalprice: '400$', offer: '40% discount', status: 'available')}
     let(:products) { [product1, product2, product3] }
     it 'Retrieves all of the products' do
       allow(Product).to receive(:all).and_return([product1, product2, product3])
@@ -42,7 +42,7 @@ describe ProductsController, type: :controller do
       session[:user_id] = @user.id      
       @current_user = @user      
     end 
-    let(:params) { {productcode: '12345', title: 'iphone', originalprice: '400$', offer: '40% discount', status: 'available', create_date: '2021-05-24'} }
+    let(:params) { {productcode: '12345', title: 'iphone', originalprice: '400$', offer: '40% discount', status: 'available'} }
     let(:product) { instance_double('Product', params)}
     let(:id1) {'1'}
     it 'Creates a new product' do
@@ -67,7 +67,7 @@ describe ProductsController, type: :controller do
       session[:user_id] = @user.id      
       @current_user = @user      
     end
-    let(:product1) {instance_double('Product', productcode: '12345', title: 'iphone', originalprice: '400$', offer: '40% discount', status: 'available', create_date: '2021-05-24')}
+    let(:product1) {instance_double('Product', productcode: '12345', title: 'iphone', originalprice: '400$', offer: '40% discount', status: 'available')}
     let(:id1) {'1'}
     it 'Retrieves the product' do
       expect(controller).to receive(:set_product).and_return(product1)
@@ -92,7 +92,7 @@ describe ProductsController, type: :controller do
       @current_user = @user      
     end
     let(:id1) {'1'}
-    let(:product){instance_double('Product', productcode: '12345', title: 'iphone', originalprice: '400$', offer: '40% discount', status: 'available', create_date: '2021-05-24')}
+    let(:product){instance_double('Product', productcode: '12345', title: 'iphone', originalprice: '400$', offer: '40% discount', status: 'available')}
     it 'Retrieves the product' do
       expect(controller).to receive(:set_product).and_return(product)
       get :edit, id: id1 
@@ -116,7 +116,7 @@ describe ProductsController, type: :controller do
       @current_user = @user      
     end
     let(:id1) {'1'}
-    let(:product) {instance_double('Product', productcode: '12345', title: 'iphone', originalprice: '400$', offer: '40% discount', status: 'available', create_date: '2021-05-24')}
+    let(:product) {instance_double('Product', productcode: '12345', title: 'iphone', originalprice: '400$', offer: '40% discount', status: 'available')}
     it 'Retrieves the product' do
       expect(controller).to receive(:set_product).and_return(product)
       allow(product).to receive(:destroy)
@@ -147,7 +147,7 @@ describe ProductsController, type: :controller do
       session[:user_id] = @user.id      
       @current_user = @user      
     end
-    let(:params) { {productcode: '12345', title: 'iphone', originalprice: '400$', offer: '40% discount', status: 'available', create_date: '2021-05-24'} }
+    let(:params) { {productcode: '12345', title: 'iphone', originalprice: '400$', offer: '40% discount', status: 'available'} }
     let(:product) { instance_double('Product', params)}
     let(:id1) {'1'}
     let(:updated){ instance_double('Product', title: 'Samsung', originalprice: '400$', offer: '40% discount', status: 'available') }
