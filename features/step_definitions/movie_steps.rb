@@ -22,7 +22,7 @@ Given /the following authorizations exist/ do |authorizations_table|
 end
 
  Then /^I will see "([^"]*)"$/ do |message|
-   puts page.body
+   # puts page.body
    expect(page.body).to have_content(message)
  end
 
@@ -36,8 +36,17 @@ Given /I am logged into Deals4all/ do
     }
 end
 
+Given /the following products exist/ do |products_table|
+  products_table.hashes.each do |product|
+    # each returned element will be a hash whose key is the table header.
+    # you should arrange to add that movie to the database here.
+      Product.create(product)
+  end
+  #fail "Unimplemented"
+end
 
 # Then /^I will see "([^"]*)"$/ do |message|
 #  puts page.body # <---
 #  expect(page.body).to have_content(message)
 # end
+

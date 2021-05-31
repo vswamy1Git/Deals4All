@@ -15,11 +15,18 @@ module NavigationHelpers
     
     when /^the landing page$/
       root_path
+
     when /^the Deals4all Home Page$/
-      deals_path      
+      deals_path     
+
     when /^the Deals4all Landing Page$/
       welcome_landing_path  
-    
+
+    when /^the Browse Products Page$/
+      products_path
+      
+    when /^Check an offer Page$/
+      offers_path
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

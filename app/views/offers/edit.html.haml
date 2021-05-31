@@ -1,0 +1,7 @@
+%h2 Edit Existing Movie
+= form_tag offer_path(@offer), :method => :put do
+  = label :offer, :title, 'Title', :class => 'col-form-label'
+  = text_field :offer, 'title', :class => 'form-control'
+  %br/
+  = submit_tag 'Update Offer Info', :class => 'btn btn-primary'
+  = link_to 'Cancel', offers_path, :class => 'btn btn-secondary'

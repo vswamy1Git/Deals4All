@@ -1,0 +1,26 @@
+/ This file is app/views/movies/index.html.erb
+%h2 All Products
+  
+%table#movies.table.table-striped.col-md-12
+  %thead
+    %tr
+      %th Product name
+      %th Original price
+      %th Offer
+      %th Offer status
+      %th More info
+  %tbody
+    - @products.each do |product|
+      %tr
+        %td
+          = product.title
+        %td
+          = product.originalprice
+        %td
+          = product.offer
+        %td
+          = product.status
+        %td
+          = link_to "More about #{product.title}", product_path(product)
+      
+= link_to "Add new product", new_product_path, :class => 'btn btn-primary'

@@ -1,0 +1,19 @@
+/ This file is app/views/movies/index.html.erb
+%h2 All Offers
+  
+%table#offers.table.table-striped.col-md-12
+  %thead
+    %tr
+      %th Name
+      %th Available Deals
+      %th More info
+  %tbody
+    - @offers.each do |offer|
+      %tr
+        %td 
+          = offer.user
+        %td
+          = offer.product
+        %td
+          = link_to "More about #{offer.product}", offer_path(offer)
+  

@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
  
   resources :deals
+  resources :profiles
+  resources :products
+  resources :offers
   match '/auth/:provider/callback', :to => 'sessions#create', :via => [:get, :post]
   match 'auth/failure', :to => 'sessions#failure', :via => [:get, :post]
   match 'sessions/destroy', :as => 'logout', :via => [:get, :post]
+  #get 'sessions/start_test'
   get 'sessions/clear'
   get 'session/debug'
 
@@ -17,7 +21,7 @@ Rails.application.routes.draw do
 
   root 'welcome#landing'
   
-  
+  get 'offers/index'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

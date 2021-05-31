@@ -25,11 +25,40 @@ ActiveRecord::Schema.define(version: 0) do
 
   create_table "deals", force: :cascade do |t|
     t.string   "user"
-    t.string   "items"
+    t.string   "product"
     t.datetime "date"
   end
 
+  create_table "movies", force: :cascade do |t|
+    t.string   "title"
+    t.string   "rating"
+    t.text     "description"
+    t.datetime "release_date"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
+  create_table "offers", force: :cascade do |t|
+    t.string   "user"
+    t.string   "product"
+    t.string   "title"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "products_id"
+  end
+
+  add_index "offers", ["products_id"], name: "index_offers_on_products_id"
+
+  create_table "products", force: :cascade do |t|
+    t.string   "productcode"
+    t.string   "title"
+    t.string   "originalprice"
+    t.string   "offer"
+    t.string   "status"
+    t.datetime "create_date"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.string   "primary_language"
