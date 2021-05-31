@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20210531171018) do
 
   create_table "authorizations", force: :cascade do |t|
     t.string   "provider"
@@ -23,63 +23,15 @@ ActiveRecord::Schema.define(version: 0) do
 
   add_index "authorizations", ["user_id"], name: "index_authorizations_on_user_id"
 
-  create_table "deals", force: :cascade do |t|
-    t.string   "user"
-<<<<<<< HEAD
-    t.string   "product"
-    t.datetime "date"
-=======
-    t.string   "items"
-    t.datetime "date",null: false
->>>>>>> e397c84254e79471a8c5e3f1d0c5c2370082b339
-  end
-
-  create_table "movies", force: :cascade do |t|
-    t.string   "title"
-    t.string   "rating"
-    t.text     "description"
-    t.datetime "release_date"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  create_table "offers", force: :cascade do |t|
-    t.string   "user"
-    t.string   "product"
-    t.string   "title"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "products_id"
-  end
-
-  add_index "offers", ["products_id"], name: "index_offers_on_products_id"
-
-<<<<<<< HEAD
   create_table "products", force: :cascade do |t|
     t.string   "productcode"
     t.string   "title"
     t.string   "originalprice"
     t.string   "offer"
     t.string   "status"
-    t.datetime "create_date"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
-
-=======
->>>>>>> e397c84254e79471a8c5e3f1d0c5c2370082b339
-  create_table "profiles", force: :cascade do |t|
-    t.string   "primary_language"
-    t.string   "secondary_language"
-    t.string   "favorite_movie"
-    t.string   "worst_movie"
-    t.string   "favorite_genre"
-    t.integer  "user_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-  end
-
-  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
